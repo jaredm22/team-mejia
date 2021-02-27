@@ -1,0 +1,25 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model VaccineCenter {
+  id            Int       @default(autoincrement()) @id
+  location      String    @db.VarChar(255)
+  address       String    @db.VarChar(255)
+  googleMapsLink String   @db.VarChar(255)
+  mbtaPlannerLink String  @db.VarChar(255)
+  vaccinesOffered   String[] 
+  siteWebpage String 
+  availability  Boolean   @default(false)
+  firstDoseAvailability Boolean @default(false)
+  secondDoseAvailability Boolean @default(false)
+
+}
