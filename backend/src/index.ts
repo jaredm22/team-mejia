@@ -15,6 +15,24 @@ app.use(express.json())
 //     res.end()
 // })
 
+app.post('/vaccineCenter', async (req, res) => {
+    const { location, address1, address2, city, state, zipCode, phone, inStock } = req.body;
+    const result = await prisma.vaccineCenter.create({
+        data: {
+            location,
+            address1, 
+            address2,
+            city,
+            state,
+            zipCode,
+            phone,
+            inStock
+        }
+    });
+    console.log("data added");
+    res.json(result);
+})
+
 app.get('/vaccineCenters', async (req, res) => {
     const vaccineCenters = await prisma.vaccineCenter.findFirst()
     console.log(vaccineCenters)
