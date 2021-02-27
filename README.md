@@ -1,14 +1,18 @@
-##Frontend 
+# Team Mejia
 
-1. Install the necessary dependencies 
+## Boston Covid-19 Vaccine Tracker
+
+## Frontend
+
+1. Install the necessary dependencies
 
 2. Start the React app
 
-    npm start
+$ npm start
 
-##Backend
+## Backend
 
-1. Install the necessary dependencies 
+1. Install the necessary dependencies
 $ cd backend
 $ npm install
 
@@ -17,5 +21,4 @@ $ npm install
 3. Start the server
 $ npm run dev
 
-Server will be running at http://localhost:5000/
-
+Server will be running at 'http://localhost:5000/'
