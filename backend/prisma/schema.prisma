@@ -10,23 +10,21 @@ generator client {
   provider = "prisma-client-js"
 }
 
-model VaccineCenter {
-  id            Int       @default(autoincrement()) @id
-  location      String    @db.VarChar(255)
-  address1      String    @db.VarChar(255)
-  address2      String    @db.VarChar(255)
-  city          String    @db.VarChar(100)
-  state         String    @db.VarChar(2)
-  zipCode       String    @db.VarChar(5)
-  phone         String    @db.VarChar(20)
-  inStock      Boolean   @default(false)
-
-  // availabilityLink String @db.VarChar(255)
-  // googleMapsLink String   @db.VarChar(255)
-  // locationWebpage String 
-
-  // vaccinesOffered   String[] 
-  // inStock  Boolean   @default(false)
-  // firstDoseAvailability Boolean @default(false)
-  // secondDoseAvailability Boolean @default(false)
+model VaccineProvider {
+  id                Int       @default(autoincrement()) @id
+  location          String    @db.VarChar(255) @unique
+  address1          String    @db.VarChar(255)
+  address2          String    @db.VarChar(255)
+  city              String    @db.VarChar(100)
+  state             String    @db.VarChar(2)
+  zip               String    @db.VarChar(5)
+  phone             String    @db.VarChar(20)
+  bostonProvider    Boolean   @default(false)
+  availabilityLink  String   @db.VarChar(255) 
+  googleMapsLink    String   @db.VarChar(255) 
+  providerWebpage   String  @db.VarChar(255)  
+  inStock           Boolean   @default(false) 
+  vaccinesOffered   String[]  
+  firstDoseAvailability Boolean @default(false)
+  secondDoseAvailability Boolean @default(false)
 }
